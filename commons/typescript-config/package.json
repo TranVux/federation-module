@@ -1,0 +1,14 @@
+{
+  "name": "@commons/typescript-config",
+  "version": "1.0.0",
+  "private": true,
+  "license": "MIT",
+  "exports":{
+    "./app.json": "./app.json",
+    "./node.json": "./node.json"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": ["*.json"]
+}

@@ -1,0 +1,15 @@
+{
+  "name": "federation-module",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "shell": "pnpm --filter shell"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "workspaces": [
+    "commons/*",
+    "packages/*"
+  ]
+}
