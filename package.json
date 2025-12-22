@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "shell": "pnpm --filter shell"
+    "shell": "pnpm --filter shell",
+    "bootstrap": "pnpm i && pnpm --filter @commons/shared build"
   },
   "author": "",
   "license": "ISC",
