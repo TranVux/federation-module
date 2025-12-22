@@ -1,19 +1,47 @@
-import path from "path";
-import tailwindcss from "@tailwindcss/vite";
+import path from 'path'
+import tailwindcss from '@tailwindcss/vite'
 
-import { defineConfig } from "vite";
-import react from "@vitejs/plugin-react";
+import { federation } from '@module-federation/vite'
+
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+
+import { federationShareDeps } from '@commons/shared'
 
 // https://vite.dev/config/
 export default defineConfig({
   server: {
-    open: true,
-    port: 3001,
+    port: 3002,
+    origin: 'http://localhost:3002',
   },
-  plugins: [react(), tailwindcss()],
+  preview: {
+    port: 3002,
+  },
+  base: 'http://localhost:3002',
+  plugins: [
+    federation({
+      name: 'remote-module2',
+      filename: 'remote_bundle.js',
+      exposes: {
+        './pages/remote-page2': './src/pages/remote-page2.tsx',
+      },
+      shared: federationShareDeps,
+    }),
+    react({ reactRefreshHost: 'http://localhost:3000' }),
+    tailwindcss(),
+  ],
   resolve: {
     alias: {
-      "@": path.resolve(__dirname, "./src"),
+      '@': path.resolve(__dirname, './src'),
     },
   },
-});
+  build: {
+    rollupOptions: {
+      output: {
+        entryFileNames: 'static/app/[hash].js',
+        chunkFileNames: 'static/chunks/[hash].js',
+        assetFileNames: 'static/assets/[hash].[ext]',
+      },
+    },
+  },
+})

@@ -1,5 +1,5 @@
 {
-  "name": "shell",
+  "name": "remote-module2",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -28,6 +28,7 @@
     "@radix-ui/react-toggle-group": "^1.1.11",
     "@radix-ui/react-tooltip": "^1.2.8",
     "@tabler/icons-react": "^3.35.0",
+    "@tailwindcss/vite": "^4.1.17",
     "@tanstack/react-table": "^8.21.3",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
@@ -44,12 +45,10 @@
     "zod": "^4.1.12"
   },
   "devDependencies": {
-    "@commons/eslint-config": "workspace:*",
     "@commons/shared": "workspace:*",
+    "@commons/eslint-config": "workspace:*",
     "@commons/typescript-config": "workspace:*",
-    "@module-federation/typescript": "^3.1.6",
     "@module-federation/vite": "1.9.2",
-    "@tailwindcss/vite": "^4.1.17",
     "@types/node": "^24.10.0",
     "@types/react": "^19.2.2",
     "@types/react-dom": "^19.2.2",
