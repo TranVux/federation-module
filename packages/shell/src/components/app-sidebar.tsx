@@ -1,4 +1,4 @@
-"use client";
+'use client'
 
 import {
   AudioWaveform,
@@ -6,88 +6,83 @@ import {
   Command,
   GalleryVerticalEnd,
   SquareTerminal,
-} from "lucide-react";
-import * as React from "react";
+} from 'lucide-react'
+import * as React from 'react'
 
-import { NavMain } from "@/components/nav-main";
-import { NavUser } from "@/components/nav-user";
-import { TeamSwitcher } from "@/components/team-switcher";
+import { NavMain } from '@/components/nav-main'
+import { NavUser } from '@/components/nav-user'
+import { TeamSwitcher } from '@/components/team-switcher'
 import {
   Sidebar,
   SidebarContent,
   SidebarFooter,
   SidebarHeader,
   SidebarRail,
-} from "@/components/ui/sidebar";
+} from '@/components/ui/sidebar'
 
 // This is sample data.
 const data = {
   user: {
-    name: "shadcn",
-    email: "m@example.com",
-    avatar: "/avatars/shadcn.jpg",
+    name: 'shadcn',
+    email: 'm@example.com',
+    avatar: '/avatars/shadcn.jpg',
   },
   teams: [
     {
-      name: "Acme Inc",
+      name: 'Acme Inc',
       logo: GalleryVerticalEnd,
-      plan: "Enterprise",
+      plan: 'Enterprise',
     },
     {
-      name: "Acme Corp.",
+      name: 'Acme Corp.',
       logo: AudioWaveform,
-      plan: "Startup",
+      plan: 'Startup',
     },
     {
-      name: "Evil Corp.",
+      name: 'Evil Corp.',
       logo: Command,
-      plan: "Free",
+      plan: 'Free',
     },
   ],
   navMain: [
     {
-      title: "Remote Module 1",
-      url: "/remote1",
+      title: 'Remote Module 1',
+      url: '/remote1',
       icon: SquareTerminal,
       isActive: true,
       items: [
         {
-          title: "History",
-          url: "/remote1/test1",
-        },
-        {
-          title: "Starred",
-          url: "/remote1/test1",
-        },
-        {
-          title: "Settings",
-          url: "/remote1/test1",
+          title: 'History',
+          url: '/remote1/test1',
         },
       ],
     },
     {
-      title: "Remote Module 2",
-      url: "/remote2",
+      title: 'Remote Module 2',
+      url: '/remote2',
       icon: Bot,
       items: [
         {
-          title: "Genesis",
-          url: "/remote2/test2",
+          title: 'Genesis',
+          url: '/remote2/test2',
         },
+      ],
+    },
+    {
+      title: 'Remote Module 2',
+      url: '/remote2',
+      icon: Bot,
+      items: [
         {
-          title: "Explorer",
-          url: "/remote2/test2",
-        },
-        {
-          title: "Quantum",
-          url: "/remote2/test2",
+          title: 'Remote 3',
+          url: '/remote3/test3',
         },
       ],
     },
   ],
-};
+}
 
-export function                    AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
+export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   return (
     <Sidebar collapsible="icon" {...props}>
       <SidebarHeader>
@@ -102,5 +97,5 @@ export function                    AppSidebar({ ...props }: React.ComponentProps
       </SidebarFooter>
       <SidebarRail />
     </Sidebar>
-  );
+  )
 }

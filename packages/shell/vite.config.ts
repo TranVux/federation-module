@@ -38,6 +38,13 @@ export default defineConfig({
           entryGlobalName: 'remote-module2',
           entry: 'http://localhost:3002/remote_bundle.js',
         },
+        'remote-module3': {
+          type: 'module',
+          name: 'remote-module3',
+          shareScope: 'default',
+          entryGlobalName: 'remote-module3',
+          entry: 'http://localhost:3003/remote_bundle.js',
+        },
       },
       shared: federationShareDeps,
     }),

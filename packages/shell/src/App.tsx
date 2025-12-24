@@ -60,7 +60,11 @@ const RemotePage2 = React.lazy(
   () => import('remote-module2/pages/remote-page2')
 )
 
-const Component = () => {
+const RemotePage3 = React.lazy(
+  () => import('remote-module3/pages/remote-page3')
+)
+
+const Component1 = () => {
   return (
     <React.Suspense fallback={<>Loading Page 1.....</>}>
       <RemotePage1 />
@@ -68,10 +72,18 @@ const Component = () => {
   )
 }
 
-const Component1 = () => {
+const Component2 = () => {
   return (
     <React.Suspense fallback={<>Loading Page 2.....</>}>
       <RemotePage2 />
+    </React.Suspense>
+  )
+}
+
+const Component3 = () => {
+  return (
+    <React.Suspense fallback={<>Loading Page 3.....</>}>
+      <RemotePage3 />
     </React.Suspense>
   )
 }
@@ -81,10 +93,14 @@ const router = createBrowserRouter([
     path: '/',
     Component: Layout,
     children: [
-      { path: 'remote1/test1', Component: Component },
+      { path: 'remote1/test1', Component: Component1 },
       {
         path: 'remote2/test2',
-        Component: Component1,
+        Component: Component2,
+      },
+      {
+        path: 'remote3/test3',
+        Component: Component3,
       },
     ],
   },

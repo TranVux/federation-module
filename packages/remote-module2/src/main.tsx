@@ -4,14 +4,14 @@ import { createBrowserRouter } from 'react-router'
 import { RouterProvider } from 'react-router/dom'
 
 import './index.css'
-const RemotePage1 = React.lazy(() => import('@/pages/remote-page2'))
+const RemotePage2 = React.lazy(() => import('@/pages/remote-page2'))
 
 const router = createBrowserRouter([
   {
-    path: 'remote1/teset1',
+    path: 'remote2/teset2',
     element: (
       <React.Suspense fallback={<>Loading.....</>}>
-        <RemotePage1 />
+        <RemotePage2 />
       </React.Suspense>
     ),
   },
