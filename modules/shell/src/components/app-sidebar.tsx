@@ -47,35 +47,35 @@ const data = {
   navMain: [
     {
       title: 'Remote Module 1',
-      url: '/remote1',
+      url: '/local1',
       icon: SquareTerminal,
       isActive: true,
       items: [
         {
           title: 'History',
-          url: '/remote1/test1',
+          url: '/local1/test1',
         },
       ],
     },
     {
       title: 'Remote Module 2',
-      url: '/remote2',
+      url: '/local2',
       icon: Bot,
       items: [
         {
           title: 'Genesis',
-          url: '/remote2/test2',
+          url: '/local2/test2',
         },
       ],
     },
     {
       title: 'Remote Module 2',
-      url: '/remote2',
+      url: '/remote1',
       icon: Bot,
       items: [
         {
           title: 'Remote 3',
-          url: '/remote3/test3',
+          url: '/remote1/test1',
         },
       ],
     },

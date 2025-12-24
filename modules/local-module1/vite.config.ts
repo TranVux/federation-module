@@ -20,10 +20,10 @@ export default defineConfig({
   base: 'http://localhost:3001/',
   plugins: [
     federation({
-      name: 'remote-module1',
+      name: 'local-module1',
       filename: 'remote_bundle.js',
       exposes: {
-        './pages/remote-page1': './src/pages/remote-page1.tsx',
+        './pages/local-page1': './src/pages/local-page1.tsx',
       },
       shared: federationShareDeps,
     }),

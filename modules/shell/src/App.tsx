@@ -56,18 +56,13 @@ const RemotePage1 = React.lazy(
   () => import('remote-module1/pages/remote-page1')
 )
 
-const RemotePage2 = React.lazy(
-  () => import('remote-module2/pages/remote-page2')
-)
-
-const RemotePage3 = React.lazy(
-  () => import('remote-module3/pages/remote-page3')
-)
+const LocalPage1 = React.lazy(() => import('local-module1/pages/local-page1'))
+const LocalPage2 = React.lazy(() => import('local-module2/pages/local-page2'))
 
 const Component1 = () => {
   return (
     <React.Suspense fallback={<>Loading Page 1.....</>}>
-      <RemotePage1 />
+      <LocalPage1 />
     </React.Suspense>
   )
 }
@@ -75,7 +70,7 @@ const Component1 = () => {
 const Component2 = () => {
   return (
     <React.Suspense fallback={<>Loading Page 2.....</>}>
-      <RemotePage2 />
+      <LocalPage2 />
     </React.Suspense>
   )
 }
@@ -83,7 +78,7 @@ const Component2 = () => {
 const Component3 = () => {
   return (
     <React.Suspense fallback={<>Loading Page 3.....</>}>
-      <RemotePage3 />
+      <RemotePage1 />
     </React.Suspense>
   )
 }
@@ -93,13 +88,13 @@ const router = createBrowserRouter([
     path: '/',
     Component: Layout,
     children: [
-      { path: 'remote1/test1', Component: Component1 },
+      { path: 'local1/test1', Component: Component1 },
       {
-        path: 'remote2/test2',
+        path: 'local2/test2',
         Component: Component2,
       },
       {
-        path: 'remote3/test3',
+        path: 'remote1/test1',
         Component: Component3,
       },
     ],
